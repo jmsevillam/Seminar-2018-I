@@ -10,6 +10,6 @@ differential equations.
 	1. Pendulum: Forced & Damped
 1. Differential Equations - Part II:
    1. Lorentz Model
-   1. Plotting with ~~python~~
+   1. Plotting with `<python>`
 1. Differential Equations - Part III:
 1. Ising Model:
