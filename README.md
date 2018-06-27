@@ -1,4 +1,4 @@
-# Seminar
+# Seminar - Under Construction
 Programming Seminar 2018 - 01
 
 Here you can find
@@ -14,5 +14,4 @@ differential equations.
 1. Differential Equations - Part III: An introduction to partial
 differential equations
 	1. Laplace equation.
-1. Ising Model: An introduction to the Monte-Carlo Simulations. Ising 
-model using the metropolis algorithm.
+1. Ising Model: An introduction to the Monte-Carlo Simulations. Ising model using the metropolis algorithm.
