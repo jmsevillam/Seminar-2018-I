@@ -6,19 +6,21 @@ for (dirpath,dirnames,filenames) in walk('.'):
     files=filenames
     break
 print files
-    
 M=[]
 T=[]
 files.sort()
+num=100
 for i in files:
     if(hasNumbers(i)):
         print(i)
         data=np.genfromtxt(i)
-        dataMag=data[:,1]
+        dataMag=data[:]
         T.append(float(i))
-        Maverage=sum(dataMag[-1000:])/1000.
+        Maverage=sum(dataMag[-int(num):])/num
         M.append(Maverage)
 import matplotlib.pylab as plt
 
-plt.plot(T,M,'.')
+plt.plot(T,M,'.-')
+plt.savefig('plot1.pdf')
+plt.savefig('plot1.png')
 plt.show()

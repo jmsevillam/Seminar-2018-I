@@ -13,18 +13,35 @@ void get_mem(matrix & m);
 void print(matrix & m);
 void Time_Step(matrix & m,const double kbT);
 void print_file(const char * NameArch, matrix & M);
-
+double calculate_Mag(const matrix & m);
 int main(int argc, char * argv[]){
   const double kbT=atof(argv[1]);
   srand(1);
   matrix ising;
   get_mem(ising);
   int Number=Nx*Ny;
+  
+  std::ofstream File(argv[1]);
+  File.precision(16);
+  
   for (int t=0;t<N*Number;t++){
     Time_Step(ising,kbT);
+    if(t%Number==0){
+      File<<calculate_Mag(ising)<<std::endl;
+    }
   }
-  print_file(argv[1],ising);
+  File.close();
+  //print_file(argv[1],ising);
   return 0;
+}
+double calculate_Mag(const matrix & m){
+double mag=0;
+  for(int x=0;x<Nx;x++){
+    for(int y=0;y<Ny;y++){
+	mag+=m[x][y];
+	}
+}
+return mag/(Nx*Ny);
 }
 
 
