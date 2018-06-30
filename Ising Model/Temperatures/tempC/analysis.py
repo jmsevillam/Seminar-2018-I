@@ -20,16 +20,20 @@ for i in files:
         M.append(Maverage)
 import matplotlib.pylab as plt
 
-plt.plot(T,M,'.-')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.set_xlabel('Temperature $T$')
+ax.set_ylabel('Magnetization $|<M>|$')
+ax.plot(T,M,'.-', label='Simulation')
 plt.savefig('plot1.pdf')
-plt.savefig('plot1.png')
 plt.show()
+
 folder='sus/'
 for (dirpath,dirnames,filenames) in walk(folder+'.'):
     files=filenames
     break
 print files
-M=[]
+Chi=[]
 T=[]
 files.sort()
 for i in files:
@@ -37,11 +41,14 @@ for i in files:
         data=np.genfromtxt(folder+i)
         dataMag=data[:]
         T.append(float(i))
-        Maverage=sum(dataMag[-int(num):])/num
-        M.append(Maverage)
+        Chiaverage=sum(dataMag[-int(num):])/num
+        Chi.append(Chiaverage)
 import matplotlib.pylab as plt
 
-plt.plot(T,M,'.-')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.set_xlabel('Temperature $T$')
+ax.set_ylabel('Susceptibility $|<\chi>|$')
+ax.plot(T,Chi,'.-', label='Simulation')
 plt.savefig('plot2.pdf')
-plt.savefig('plot2.png')
 plt.show()
