@@ -3,11 +3,11 @@
 #include<cmath>
 #include<fstream>
 #include<cstdlib>
-const int Nx=25;
-const int Ny=25;
+const int Nx=100;
+const int Ny=100;
 const int N=1000;
 const double J=1.;
-const double h=.1;
+const double h=1.;
 typedef std::vector<std::vector<double> > matrix;
 void get_mem(matrix & m);
 void print(matrix & m);
@@ -25,7 +25,7 @@ int main(int argc, char * argv[]){
   double H=h;
   std::ofstream File(argv[1]);
   std::ofstream File2(argv[2]);
-  File.precision(16); File2.precision(16);  
+  File.precision(16); File2.precision(16);
   for (int t=0;t<N*Number;t++){
     if(t==(int) N*Number/2.){H=0.;}
     Time_Step(ising,kbT,H);
@@ -47,7 +47,7 @@ double mag=0;
 	mag+=m[x][y];
 	}
 }
-return mag/(Nx*Ny);
+return fabs(mag)/(Nx*Ny);
 }
 double calculate_sus(const matrix & m){
   double sus=0;
