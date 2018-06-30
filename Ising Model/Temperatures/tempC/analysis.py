@@ -10,7 +10,7 @@ print files
 M=[]
 T=[]
 files.sort()
-num=300
+num=1000
 for i in files:
         print(i)
         data=np.genfromtxt(folder+i)
@@ -32,7 +32,6 @@ print files
 M=[]
 T=[]
 files.sort()
-num=100
 for i in files:
         print(i)
         data=np.genfromtxt(folder+i)

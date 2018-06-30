@@ -3,9 +3,9 @@
 #include<cmath>
 #include<fstream>
 #include<cstdlib>
-const int Nx=100;
-const int Ny=100;
-const int N=1000;
+const int Nx=25;
+const int Ny=25;
+const int N=10000;
 const double J=1.;
 const double h=1.;
 typedef std::vector<std::vector<double> > matrix;
@@ -14,7 +14,7 @@ void print(matrix & m);
 void Time_Step(matrix & m,const double kbT,const double H);
 void print_file(const char * NameArch, matrix & M);
 double calculate_Mag(const matrix & m);
-double calculate_sus(const matrix & m);
+double calculate_sus(const matrix & m,double  mag);
 int main(int argc, char * argv[]){
   const double kbT=atof(argv[1]);
   srand(1);
@@ -32,7 +32,8 @@ int main(int argc, char * argv[]){
     if(t%Number==0){
       mag=calculate_Mag(ising);
       File<<mag<<std::endl;
-      File2<<(calculate_sus(ising)-mag*mag)/kbT<<std::endl;
+      //      File2<<(calculate_sus(ising)-mag*mag)/kbT<<std::endl;
+      File2<<(calculate_sus(ising,mag))/kbT<<std::endl;
     }
   }
   File.close();
@@ -44,21 +45,21 @@ double calculate_Mag(const matrix & m){
 double mag=0;
   for(int x=0;x<Nx;x++){
     for(int y=0;y<Ny;y++){
-	mag+=m[x][y];
+      mag+=m[x][y];
 	}
 }
 return fabs(mag)/(Nx*Ny);
 }
-double calculate_sus(const matrix & m){
+double calculate_sus(const matrix & m,double mag){
+  
   double sus=0;
   for(int x=0;x<Nx;x++){
     for(int y=0;y<Ny;y++){
-      sus+=(m[x][y]*m[x][y]);
+      sus+=(m[x][y]-mag)*(m[x][y]-mag);
     }
   }
 return sus/(Nx*Ny);
 }
-
 
 void get_mem(matrix & m){
   m.resize(Nx);
