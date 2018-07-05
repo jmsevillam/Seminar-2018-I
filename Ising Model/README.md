@@ -1,17 +1,6 @@
-# Seminar - Under Construction
+# Ising Model
 Programming Seminar 2018 - 01
 
-Here you can find
+In the folder [codes](https://github.com/jmsevillam/Seminar/tree/master/Ising%20Model/codes), you can find the programs on `python` and `C++` for an ising model at a temperature which is fixed. Meanwhile on [Temperature](https://github.com/jmsevillam/Seminar/tree/master/Ising%20Model/Temperatures) running the bash scrips `Temperature/script.sh` or `Temperature/C/scripta.sh` a cycle over temperatures is done.
 
-1. [Differential Equations - Part I](https://github.com/jmsevillam/Seminar/tree/master/Differential%20Equations%20-%20Part%20I): An introduction to ordinary
-differential equations.
-	1. Decay Model.
-	1. Pendulum: Small Oscillations.
-	1. Pendulum: Forced & Damped.
-1. Differential Equations - Part II:
-   1. Lorentz Model.
-   1. Plotting with `python`.
-1. [Differential Equations - Part III](https://github.com/jmsevillam/Seminar/tree/master/Differential%20Equations%20-%20Part%20III): An introduction to partial
-differential equations
-	1. Laplace equation.
-1. [Ising Model: An introduction to the Monte-Carlo Simulations.](https://github.com/jmsevillam/Seminar/tree/master/Ising%20Model) Ising model using the metropolis algorithm.
+Finally running `analysis.py`, the plot of magnetization per site and susceptibility are done.
