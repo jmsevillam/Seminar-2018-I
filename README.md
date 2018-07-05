@@ -14,4 +14,5 @@ differential equations.
 1. [Differential Equations - Part III](https://github.com/jmsevillam/Seminar/tree/master/Differential%20Equations%20-%20Part%20III): An introduction to partial
 differential equations
 	1. Laplace equation.
-1. [Ising Model: An introduction to the Monte-Carlo Simulations.](https://github.com/jmsevillam/Seminar/tree/master/Ising%20Model) Ising model using the metropolis algorithm.
+1. [Ising Model](https://github.com/jmsevillam/Seminar/tree/master/Ising%20Model): An introduction to the Monte-Carlo Simulations. Ising model 
+using the metropolis algorithm.
